@@ -1,0 +1,36 @@
+<div>
+  <div class="card" *ngIf="cubo">
+    <img
+      src="{{ cubo.imagen }}"
+      class="card-img-top"
+      alt="..."
+      style="width: 200px"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Nombre: {{ cubo.nombre }}</h5>
+      <h5 class="card-title">Precio:{{ cubo.precio }}€</h5>
+      <h5 class="card-title">Modelo:{{ cubo.modelo }}</h5>
+      <h5 class="card-title">Color:{{ cubo.color }}</h5>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-success">Comprar</button>
+    </div>
+  </div>
+  <h1>VALORACIONES</h1>
+  <div *ngIf="comentarios && cubo">
+    <div class="row" *ngFor="let comentario of comentarios">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ comentario.idUsuario }}</h5>
+            <i>{{ comentario.fechaComentario }}</i>
+            <p class="card-text">
+              {{ comentario.comentario }}
+            </p>
+            <p class="card-text">{{ cubo.valoracion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

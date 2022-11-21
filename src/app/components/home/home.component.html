@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 *ngIf="marca">{{ marca }}</h1>
+  <div class="card" style="width: 18rem" *ngFor="let cubo of cubos">
+    <img src="{{ cubo.imagen }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ cubo.nombre }}</h5>
+      <h5 class="card-title">{{ cubo.precio }}€</h5>
+      <a [routerLink]="['/valoracion/', cubo.idCubo]" class="btn btn-primary"
+        >Comprar</a
+      >
+    </div>
+  </div>
+</div>
