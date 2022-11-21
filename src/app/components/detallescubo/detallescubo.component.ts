@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Comentario } from 'src/app/models/comentario';
 import { Cubo } from 'src/app/models/cubo';
 import { CuboService } from 'src/app/services/cubo.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-detallescubo',
@@ -14,7 +15,9 @@ export class DetallescuboComponent implements OnInit {
   public comentarios!: Array<Comentario>;
   constructor(
     private _serviceCubo: CuboService,
-    private _activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute,
+    private _serviceUsuario: UsuarioService,
+    private _router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,5 +40,9 @@ export class DetallescuboComponent implements OnInit {
     });
   }
 
-  loadUsuarioComentario(id: number): void {}
+  comprarCubo(): void {
+    this._serviceUsuario.postPedido(this.cubo.idCubo).subscribe(() => {
+      this._router.navigate(['/usuario']);
+    });
+  }
 }

@@ -13,7 +13,7 @@
       <h5 class="card-title">Color:{{ cubo.color }}</h5>
     </div>
     <div class="card-footer">
-      <button class="btn btn-success">Comprar</button>
+      <button class="btn btn-success" (click)="comprarCubo()">Comprar</button>
     </div>
   </div>
   <h1>VALORACIONES</h1>
@@ -22,12 +22,12 @@
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{ comentario.idUsuario }}</h5>
+            <h5 class="card-title">Usuario: {{ comentario.idUsuario }}</h5>
             <i>{{ comentario.fechaComentario }}</i>
             <p class="card-text">
               {{ comentario.comentario }}
             </p>
-            <p class="card-text">{{ cubo.valoracion }}</p>
+            <p class="card-text">Puntuacion: {{ cubo.valoracion }}</p>
           </div>
         </div>
       </div>

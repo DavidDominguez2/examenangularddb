@@ -1,0 +1,31 @@
+<div>
+  <div *ngIf="usuario">
+    <h1>PERFIL</h1>
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ usuario.nombre }}</h5>
+        <p class="card-text">
+          {{ usuario.email }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="compras">
+    <h1>COMPRAS</h1>
+    <div
+      class="card"
+      style="width: 18rem"
+      *ngFor="let compra of compras; let i = index"
+    >
+      <div class="card-body">
+        <h5 class="card-title">idPedido {{ compra.idPedido }}</h5>
+        <h5 class="card-text" *ngIf="cubosusuario">
+          CUBO: {{ cubosusuario[i].nombre }}
+        </h5>
+        <p class="card-text">
+          {{ compra.fechaPedido }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

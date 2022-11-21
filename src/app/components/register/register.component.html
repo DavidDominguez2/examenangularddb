@@ -1,0 +1,11 @@
+<div>
+  <form #registerForm="ngForm" (submit)="register()">
+    <label>NOMBRE</label>
+    <input type="text" #cajanombre class="form-control" />
+    <label>EMAIL</label>
+    <input type="email" #cajaemail class="form-control" />
+    <label>PASSWORD</label>
+    <input type="password" #cajapassword class="form-control" />
+    <button class="btn btn-success">Register</button>
+  </form>
+</div>

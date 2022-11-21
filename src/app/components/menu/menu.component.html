@@ -33,6 +33,14 @@
           </ul>
         </li>
       </ul>
+      <div *ngIf="status == false">
+        <a [routerLink]="['/login']" class="nav-link">Login</a>
+        <a [routerLink]="['/register']" class="nav-link">Register</a>
+      </div>
+      <div *ngIf="status">
+        <a [routerLink]="['/usuario']" class="nav-link">Perfil</a>
+        <button class="btn btn-danger" (click)="logOut()">Log Out</button>
+      </div>
     </div>
   </div>
 </nav>
