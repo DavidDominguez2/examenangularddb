@@ -24,7 +24,6 @@ export class UsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.loadUsuario();
     this.loadCompras();
-    this.loadCubos();
   }
 
   loadUsuario(): void {
@@ -43,6 +42,4 @@ export class UsuarioComponent implements OnInit {
       });
     });
   }
-
-  loadCubos(): void {}
 }
